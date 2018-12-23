@@ -157,25 +157,25 @@ difference()
     translate( [ -72.5 , 42.7 , 11.7 ] ) cylinder( h = 3, r = 1.4, r2=2.2, $fn=30); 
 
     // ORIGINAL PRUSA text
-    translate([-71,51,0.6]) rotate([180,0,0]) linear_extrude(height = 2) 
-    { text("HALF BEAR",font = "helvetica:style=Bold", size=7, center=true); }
-    translate([-14,51,0.6]) rotate([180,0,0]) linear_extrude(height = 2) 
+    translate([-71,51,0.4]) rotate([180,0,0]) linear_extrude(height = 2) 
+    { text("FULL BEAR",font = "helvetica:style=Bold", size=7, center=true); }
+    translate([-16,51,0.4]) rotate([180,0,0]) linear_extrude(height = 2) 
     { text("PRUSA",font = "helvetica:style=Bold", size=11, center=true); }
-    translate( [ -70 , 40.5 , -0.4 ] ) cube( [ 51 , 1.6 , 1 ] );  
-    translate( [ -70 , 41.3 , -0.4 ] ) cylinder( h = 1, r = 0.8, $fn=30);  
-    translate( [ -19 , 41.3 , -0.4 ] ) cylinder( h = 1, r = 0.8, $fn=30);
-
+    translate( [ -70 , 40.5 , -0.6 ] ) cube( [ 49.5 , 1.6 , 1 ] );  
+    translate( [ -70 , 41.3 , -0.6 ] ) cylinder( h = 1, r = 0.8, $fn=30);  
+    translate( [ -20.5 , 41.3 , -0.6 ] ) cylinder( h = 1, r = 0.8, $fn=30);
+ 
     // Bear Logo
     scale(0.24,0.24,1)
     translate([-266, 115, 0]) rotate(180)
-    bearlogo(2.5)
+    bearlogo(1.6666)
     
     // front cleanup
     translate( [ -100 , -64 , 0 ] ) cube( [ 200 , 50 , 50 ] ); 
 
     // X sign on reset button
-    translate( [ 63 , 34 , -1 ] ) rotate([0,0,45]) cube( [ 2, 8, 2 ] );  
-    translate( [ 57.5 , 35.5 , -1 ] ) rotate([0,0,-45]) cube( [ 2, 8, 2 ] );  
+    translate( [ 63 , 34 , -1.6 ] ) rotate([0,0,45]) cube( [ 2, 8, 2 ] );  
+    translate( [ 57.5 , 35.5 , -1.6 ] ) rotate([0,0,-45]) cube( [ 2, 8, 2 ] );  
 
     // corners
     translate( [ 73 , -5 , -1 ] ) rotate([0,45,0]) cube( [ 7, 80, 7 ] );  

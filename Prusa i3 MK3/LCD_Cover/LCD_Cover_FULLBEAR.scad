@@ -5,6 +5,7 @@
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
+include <bear_logo.scad>
 
 module main_body()
 {
@@ -163,15 +164,11 @@ difference()
     translate( [ -70 , 40.5 , -0.4 ] ) cube( [ 49.5 , 1.6 , 1 ] );  
     translate( [ -70 , 41.3 , -0.4 ] ) cylinder( h = 1, r = 0.8, $fn=30);  
     translate( [ -20.5 , 41.3 , -0.4 ] ) cylinder( h = 1, r = 0.8, $fn=30);
-
-    // Bear Stamp
-    difference()
-    scale(0.8,0.8,1)
-    translate([-186.8,25,-26]) rotate([0,0,180])
-    
-    //linear_extrude(height = 2) 
-    import("Bear_Stamp.stl", layer="Stamp");
-    //import("bear.dxf");
+ 
+    // Bear Logo
+    scale(0.24,0.24,1)
+    translate([-266, 115, 0]) rotate(180)
+    bearlogo(2.5)
     
     // front cleanup
     translate( [ -100 , -64 , 0 ] ) cube( [ 200 , 50 , 50 ] ); 

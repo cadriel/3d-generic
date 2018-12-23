@@ -5,6 +5,7 @@
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
+include <bear_logo.scad>
 
 module main_body()
 {
@@ -93,77 +94,52 @@ difference()
     union()
     {
 
-        pcb_clip();
-        main_body();
+    pcb_clip();
+    main_body();
 
-        // reset button
-        translate( [ 62.5 , 37.3 , 0 ] ) cylinder( h = 7.2, r = 3.5, $fn=30); 
+    // reset button
+    translate( [ 62.5 , 37.3 , 0 ] ) cylinder( h = 7.2, r = 3.5, $fn=30); 
 
-        //left side
-        translate( [ -77 , -14.7 , 0 ] ) cube( [ 1.5 , 70.7 , 26 ] );  
-        translate( [ -76.5 , -15 , 0 ] ) cube( [ 4 , 70 , 14.6 ] );  
+    //left side
+    translate( [ -77 , -14.7 , 0 ] ) cube( [ 1.5 , 70.7 , 26 ] );  
+    translate( [ -76.5 , -15 , 0 ] ) cube( [ 4 , 70 , 14.6 ] );  
 
-        //right side
-        translate( [ 76.5 , -14.7 , 0 ] ) cube( [ 1.5 , 70.7 , 26 ] ); 
-        translate( [ 73.5 , -14 , 0 ] ) cube( [ 4 , 70 , 14.5 ] );  
+    //right side
+    translate( [ 76.5 , -14.7 , 0 ] ) cube( [ 1.5 , 70.7 , 26 ] ); 
+    translate( [ 73.5 , -14 , 0 ] ) cube( [ 4 , 70 , 14.5 ] );  
 
-        //rear side reinforcement
-        translate( [ -54.5 , -11.7 , 8 ] ) cube( [ 110 , 4 , 6.5 ] );  
-        translate( [ 65.5 , -11.7 , 8 ] ) cube( [ 12 , 4 , 6.5 ] );  
-        translate( [ 65.5 , -13 , 14 ] ) cube( [ 12 , 2 , 12 ] );  
-        translate( [ -76.5 , -11.7 , 8 ] ) cube( [ 12 , 4 , 6.5 ] );  
-        translate( [ -76.5 , -14.7 , 14.5 ] ) cube( [ 12 , 4 , 11.5 ] );  
-        translate( [ -44 , -14.7 , 14.5 ] ) cube( [ 89 , 4 , 11.5 ] );  
-        translate( [ -43.5 , -10.7 , 15 ] ) rotate([90,0,0]) cylinder( h = 2, r = 11, $fn=60);  
-        translate( [ 44.5 , -10.7 , 15 ] ) rotate([90,0,0]) cylinder( h = 2, r = 11, $fn=60);  
+    //rear side reinforcement
+    translate( [ -54.5 , -11.7 , 8 ] ) cube( [ 110 , 4 , 6.5 ] );  
+    translate( [ 65.5 , -11.7 , 8 ] ) cube( [ 12 , 4 , 6.5 ] );  
+    translate( [ 65.5 , -13 , 14 ] ) cube( [ 12 , 2 , 12 ] );  
+    translate( [ -76.5 , -11.7 , 8 ] ) cube( [ 12 , 4 , 6.5 ] );  
+    translate( [ -76.5 , -14.7 , 14.5 ] ) cube( [ 12 , 4 , 11.5 ] );  
+    translate( [ -44 , -14.7 , 14.5 ] ) cube( [ 89 , 4 , 11.5 ] );  
+    translate( [ -43.5 , -10.7 , 15 ] ) rotate([90,0,0]) cylinder( h = 2, r = 11, $fn=60);  
+    translate( [ 44.5 , -10.7 , 15 ] ) rotate([90,0,0]) cylinder( h = 2, r = 11, $fn=60);  
 
-        //front left side reinforcement
-        difference()
-        {
-            union()
-                {
-                    translate( [ -77 , 41.3 , 0 ] ) cube( [ 15 , 14 , 25 ] );  
-                    translate( [ -77 , 46.3 , 14 ] ) cube( [ 15 , 9 , 3 ] );    
-                }
-            translate( [ -64.5 , 40 , -3 ] ) cube( [ 4 , 8 , 40 ] );  
-            translate( [ -75.5 , 40.3 , 14.5 ] ) cube( [15 , 6.5 , 25 ] ); 
-        }
-    
-        //front right side reinforcement
-        difference()
-        {
-                translate( [ 38 , 41.2 , 0 ] ) cube( [ 40 , 14 , 26 ] );  
-                translate( [ 55 , 44.5 , 0 ] ) cube( [ 10.5 , 3.7 , 30 ] );  
-                translate( [ 44 , 39.5 , 0 ] ) cube( [ 25.5 , 5 , 30 ] );  
-                translate( [ 35 , 39.3 , 14.5 ] ) cube( [ 42.5 , 7 , 15 ] );  
-                translate( [ 49 , 43.2 , 25 ] ) rotate([0,60,0]) cube( [ 12 , 5 , 10 ] );  
-        }
-    
-        difference()
-        {
-            union() {
-
-                // ORIGINAL PRUSA text
-                translate([-71,51,1.6]) rotate([180,0,0]) linear_extrude(height = 2)
-                { text("FULL BEAR",font = "helvetica:style=Bold", size=7, center=true); }
-                translate([-16,51,1.6]) rotate([180,0,0]) linear_extrude(height = 2)
-                { text("PRUSA",font = "helvetica:style=Bold", size=11, center=true); }
-                translate( [ -70 , 40.5 , -0.4 ] ) cube( [ 49.5 , 1.6 , 1 ] );
-                translate( [ -70 , 41.3 , -0.4 ] ) cylinder( h = 1, r = 0.8, $fn=30);
-                translate( [ -20.5 , 41.3 , -0.4 ] ) cylinder( h = 1, r = 0.8, $fn=30);                
-                
-                // Bear Stamp
-                scale(0.8,0.8,1)
-                translate([-186.8,25,-26.6]) rotate([0,0,180])
-                import("Bear_Stamp.stl", layer="Stamp");
-
-                // X sign on reset button
-                translate( [ 63 , 34 , -0.4 ] ) rotate([0,0,45]) cube( [ 2, 8, 2 ] );  
-                translate( [ 57.5 , 35.5 , -0.4 ] ) rotate([0,0,-45]) cube( [ 2, 8, 2 ] );  
+    //front left side reinforcement
+    difference()
+    {
+        union()
+            {
+                translate( [ -77 , 41.3 , 0 ] ) cube( [ 15 , 14 , 25 ] );  
+                translate( [ -77 , 46.3 , 14 ] ) cube( [ 15 , 9 , 3 ] );    
             }
+        translate( [ -64.5 , 40 , -3 ] ) cube( [ 4 , 8 , 40 ] );  
+        translate( [ -75.5 , 40.3 , 14.5 ] ) cube( [15 , 6.5 , 25 ] ); 
+    }
+    
+    //front right side reinforcement
+    difference()
+        {
+            translate( [ 38 , 41.2 , 0 ] ) cube( [ 40 , 14 , 26 ] );  
+            translate( [ 55 , 44.5 , 0 ] ) cube( [ 10.5 , 3.7 , 30 ] );  
+            translate( [ 44 , 39.5 , 0 ] ) cube( [ 25.5 , 5 , 30 ] );  
+            translate( [ 35 , 39.3 , 14.5 ] ) cube( [ 42.5 , 7 , 15 ] );  
+            translate( [ 49 , 43.2 , 25 ] ) rotate([0,60,0]) cube( [ 12 , 5 , 10 ] );  
         }
     }
-
     
 
     
@@ -180,8 +156,26 @@ difference()
     translate( [ 72.5 , 43.2 , 11.7 ] ) cylinder( h = 3, r1 = 1.4, r2=2.2, $fn=30);  
     translate( [ -72.5 , 42.7 , 11.7 ] ) cylinder( h = 3, r = 1.4, r2=2.2, $fn=30); 
 
+    // ORIGINAL PRUSA text
+    translate([-71,51,0.4]) rotate([180,0,0]) linear_extrude(height = 2) 
+    { text("HALF BEAR",font = "helvetica:style=Bold", size=7, center=true); }
+    translate([-14,51,0.4]) rotate([180,0,0]) linear_extrude(height = 2) 
+    { text("PRUSA",font = "helvetica:style=Bold", size=11, center=true); }
+    translate( [ -70 , 40.5 , -0.6 ] ) cube( [ 51 , 1.6 , 1 ] );  
+    translate( [ -70 , 41.3 , -0.6 ] ) cylinder( h = 1, r = 0.8, $fn=30);  
+    translate( [ -19 , 41.3 , -0.6 ] ) cylinder( h = 1, r = 0.8, $fn=30);
+
+    // Bear Logo
+    scale(0.24,0.24,1)
+    translate([-266, 115, 0]) rotate(180)
+    bearlogo(1.6666)
+    
     // front cleanup
     translate( [ -100 , -64 , 0 ] ) cube( [ 200 , 50 , 50 ] ); 
+
+    // X sign on reset button
+    translate( [ 63 , 34 , -1.6 ] ) rotate([0,0,45]) cube( [ 2, 8, 2 ] );  
+    translate( [ 57.5 , 35.5 , -1.6 ] ) rotate([0,0,-45]) cube( [ 2, 8, 2 ] );  
 
     // corners
     translate( [ 73 , -5 , -1 ] ) rotate([0,45,0]) cube( [ 7, 80, 7 ] );  
